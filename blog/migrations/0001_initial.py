@@ -16,12 +16,44 @@ class Migration(migrations.Migration):
         migrations.swappable_dependency(settings.AUTH_USER_MODEL),
     ]
 
+    # GENDER_CHOICES = (
+    #     ('AC', 'ACRE'),
+    #     ('AL', 'ALAGOAS'),
+    #     ('AP', 'AMAPÁ'),
+    #     ('AM', 'AMAZONAS'),
+    #     ('BA', 'BAHIA'),
+    #     ('CE', 'CEARÁ'),
+    #     ('DF', 'DISTRITO FEDERAL'),
+    #     ('ES', 'ESPÍRITO SANTO'),
+    #     ('GOIÁS','GO'),
+    #     ('MA', 'MARANHÃO'),
+    #     ('MT', 'MATO GROSSO'),
+    #     ('MS', 'MATO GROSSO DO SUL'),
+    #     ('MG', 'MINAS GERAIS'),
+    #     ('PA', 'PARÁ'),
+    #     ('PB', 'PARAÍBA'),
+    #     ('PR', 'PARANÁ'),
+    #     ('PE', 'PERNAMBUCO'),
+    #     ('PI', 'PIAUÍ'),
+    #     ('RJ', 'RIO DE JANEIRO'),
+    #     ('R', 'RIO GRANDE DO NORTE'),
+    #     ('RS', 'RIO GRANDE DO SUL'),
+    #     ('RO', 'RONDÔNIA'),
+    #     ('RR', 'RORAIMA'),
+    #     ('SC', 'SANTA CATARINA'),
+    #     ('SP', 'SÃO PAULO'),
+    #     ('SE', 'SERGIPE'),
+    #     ('TO', 'TOCANTINS'),
+
+    # )
+
     operations = [
         migrations.CreateModel(
             name='Post',
             fields=[
                 ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
                 ('title', models.CharField(max_length=200)),
+                # ('estado', models.CharField(max_length=100 , choices=GENDER_CHOICES)),
                 ('text', models.TextField()),
                 ('created_date', models.DateTimeField(default=django.utils.timezone.now)),
                 ('published_date', models.DateTimeField(blank=True, null=True)),
